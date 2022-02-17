@@ -28,7 +28,7 @@ for j in range(len(l1)):
     if l1.__getitem__(j) in veg_fruits:
         n = 0
         while n < extra_qty[m]:
-            driver.find_elements(By.CLASS_NAME, "increment").__getitem__(j).click()
+            driver.find_elements(By.CSS_SELECTOR, "a.increment").__getitem__(j).click()
             time.sleep(1)
             n += 1
         driver.find_elements(By.CSS_SELECTOR, "div.product-action").__getitem__(j).click()
