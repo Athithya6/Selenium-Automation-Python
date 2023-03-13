@@ -10,6 +10,7 @@ driver = webdriver.Chrome(service=s)
 driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 driver.maximize_window()
 l1 = []
+driver.implicitly_wait(10)
 wait = WebDriverWait(driver,10)
 
 veg_fruits = ["Cucumber", "Beetroot", "Brinjal", "Capsicum", "Mushroom", "Pumpkin", "Mango", "Musk Melon", "Strawberry",
@@ -29,7 +30,7 @@ for j in range(len(l1)):
         n = 0
         while n < extra_qty[m]:
             driver.find_elements(By.CSS_SELECTOR, "a.increment").__getitem__(j).click()
-            time.sleep(1)
+            # time.sleep(1)
             n += 1
         driver.find_elements(By.CSS_SELECTOR, "div.product-action").__getitem__(j).click()
         time.sleep(1)
